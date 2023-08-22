@@ -1,0 +1,55 @@
+version: '3'
+networks:
+  database-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1
+  connection-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.0.0/24
+          gateway: 172.31.0.1
+volumes:
+  frontVolume:
+  backVolume:
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=Uno_23456
+    expose:
+      - 3306
+    networks:
+      database-net:
+        ipv4_address: 172.30.0.2
+    ports:
+      - 3307:3306
+    volumes:
+      - C:/Users/Ald/Desktop/db:/var/dbscripts/
+  netcore:
+    container_name: netcore6
+    build: C:/Users/Ald/Desktop/SProject/Back/SProject
+    expose:
+      - 5000
+    networks:
+      database-net:
+        ipv4_address: 172.30.0.3
+      connection-net:
+        ipv4_address: 172.31.0.3
+    ports:
+      - 5001:5000
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    volumes:
+      - C:/Users/Ald/Desktop/SProject/Front/SProject/dist/sproject:/usr/share/nginx/html
+    ports:
+      - "7000:80"
+    networks:
+      connection-net:
+        ipv4_address: 172.31.0.2
+
