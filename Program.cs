@@ -22,18 +22,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.WithOrigins("https://localhost:4200")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .SetIsOriginAllowed((Host) => true)
-                          .AllowCredentials();
-                      });
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
 });
 
 // DB Configs
-var connectionString = "server=localhost; database=" + DBname + "; user=" + user + "; password=" + password;
+var connectionString = "server=172.30.0.2; port=3306; database=" + DBname + "; user=" + user + "; password=" + password;
 
 builder.Services.AddTransient<IItemDS, ItemDS>();
 builder.Services.AddTransient<IItemBS, ItemBS>();
@@ -106,8 +102,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddAuthorization();
-
 // Automaper
 var mapperConfig = new MapperConfiguration(
                 mc =>
@@ -117,7 +111,6 @@ var mapperConfig = new MapperConfiguration(
             );
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -128,7 +121,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();

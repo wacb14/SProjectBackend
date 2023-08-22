@@ -81,3 +81,13 @@ C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\Microsoft.EntityFra
 C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\Mono.TextTemplating.dll
 C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\web.config
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\appsettings.Development.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\appsettings.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\SProject.deps.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\SProject.runtimeconfig.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\out\web.config
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\out\appsettings.Development.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\out\appsettings.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\out\SProject.deps.json
+C:\Users\Ald\Desktop\SProject\Back\SProject\bin\Debug\net6.0\out\out\SProject.runtimeconfig.json
